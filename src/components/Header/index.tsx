@@ -3,12 +3,12 @@ import React from "react"
 import Image from "next/image";
 import styles from "./Header.module.scss";
 import Link from 'next/link';
+import Drop from "./Drop";
 import { CiSearch } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { arr, arrMenu } from "./arr";
 import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu";
-import Drop from "./Drop";
 
 
 interface IHeaderProps { }
@@ -52,12 +52,14 @@ export default function Header({ }: IHeaderProps) {
                         ))}
                     </ul>
                 </div>
-                <DropdownMenu>
-                    <DropdownMenuTrigger className="outline-none" onClick={() => setClose(!close)} >
-                        <RxHamburgerMenu className={styles.burger} />
-                    </DropdownMenuTrigger>
-                    <Drop arr={arr} arrMenu={arrMenu} />
-                </DropdownMenu>
+                <div className={styles.drop}>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger className="outline-none" onClick={() => setClose(!close)} >
+                            <RxHamburgerMenu className={styles.burger} />
+                        </DropdownMenuTrigger>
+                        <Drop arr={arr} arrMenu={arrMenu} />
+                    </DropdownMenu>
+                </div>
             </div>
         </header>
     );

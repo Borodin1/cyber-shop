@@ -26,6 +26,9 @@
         .burger{
             @apply xlg:hidden block text-3xl;
         }
+        .drop{
+            @apply xlg:hidden block;
+        }
     }
 
     .menu {

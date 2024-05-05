@@ -1,0 +1,11 @@
+.root {
+    @apply w-full text-white;
+
+    .container {
+        @apply flex justify-between items-center max-w-[1400px] mx-auto;
+
+        .info {
+            @apply flex flex-col gap-6
+        }
+    }
+}
