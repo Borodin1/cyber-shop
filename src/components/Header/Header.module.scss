@@ -1,0 +1,35 @@
+.root {
+    @apply w-full;
+
+    .container {
+        @apply max-w-[1440px] mx-auto px-0 py-8 flex justify-around items-center;
+
+        .inputLogo {
+            @apply flex gap-11;
+
+            .input {
+                @apply relative;
+
+                input {
+                    @apply text-sm placeholder:opacity-55 py-3 px-3 pl-9 w-[372px] bg-slate-300 rounded-md outline-none;
+                }
+
+                .icon {
+                    @apply absolute top-[14px] left-[7px] text-base
+                }
+
+                .close {
+                    @apply absolute right-[7px] top-[14px] text-lg cursor-pointer
+                }
+            }
+        }
+    }
+
+    .menu {
+        @apply flex gap-6;
+
+        li {
+            @apply text-3xl;
+        }
+    }
+}
