@@ -1,0 +1,6 @@
+.root{
+    @apply w-full;
+    .container{
+        @apply grid grid-cols-12 max-w-[3700px] mx-auto overflow-hidden ;
+    }
+}
