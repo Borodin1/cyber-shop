@@ -1,0 +1,35 @@
+.root {
+    @apply w-[200px] border border-black/25 mr-4 mt-2 xlg:hidden block;
+
+    .label {
+        @apply text-xl;
+    }
+
+    .separator {
+        @apply bg-black/25;
+    }
+
+    .arrMenu {
+        @apply flex;
+
+        .logo {
+            @apply text-xl;
+        }
+
+        .title {
+            @apply text-base;
+        }
+    }
+
+    .arr {
+        @apply flex;
+
+        .logo {
+            @apply text-xl;
+        }
+
+        .title {
+            @apply text-base;
+        }
+    }
+}

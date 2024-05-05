@@ -2,16 +2,16 @@
     @apply w-full;
 
     .container {
-        @apply max-w-[1440px] mx-auto px-0 py-8 flex justify-around items-center;
+        @apply max-w-[1440px] mx-auto px-4 py-8 flex gap-6 justify-between items-center;
 
         .inputLogo {
-            @apply flex gap-11;
+            @apply flex sm:gap-11 gap-2;
 
             .input {
-                @apply relative;
+                @apply relative xs:block hidden;
 
                 input {
-                    @apply text-sm placeholder:opacity-55 py-3 px-3 pl-9 w-[372px] bg-slate-300 rounded-md outline-none;
+                    @apply text-sm placeholder:opacity-55  w-[200px] sm:w-[350px] py-3 px-3 pl-9 bg-stone-200 rounded-md outline-none;
                 }
 
                 .icon {
@@ -23,13 +23,32 @@
                 }
             }
         }
+        .burger{
+            @apply xlg:hidden block text-3xl;
+        }
     }
 
     .menu {
-        @apply flex gap-6;
+        @apply gap-16 xlg:flex hidden items-center ;
 
-        li {
-            @apply text-3xl;
+        .subMenuOne {
+            @apply flex gap-14;
+
+            li {
+                a {
+                    @apply text-base text-stone-400 hover:text-black;
+                }
+            }
+        }
+
+        .subMenuTwo {
+            @apply flex gap-7;
+
+            li {
+                a {
+                    @apply text-[32px];
+                }
+            }
         }
     }
 }

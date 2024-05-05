@@ -5,12 +5,16 @@ import styles from "./Header.module.scss";
 import Link from 'next/link';
 import { CiSearch } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
-import { arr } from "./arr";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { arr, arrMenu } from "./arr";
+import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import Drop from "./Drop";
 
 
 interface IHeaderProps { }
 export default function Header({ }: IHeaderProps) {
     const [input, setInput] = React.useState("");
+    const [close, setClose] = React.useState(true);
     return (
         <header className={styles.root}>
             <div className={styles.container}>
@@ -33,14 +37,27 @@ export default function Header({ }: IHeaderProps) {
                     </div>
                 </div>
                 <div className={styles.menu}>
-                    {arr.map((item, i) => (
-                        <ul key={i}>
-                            <Link href={item.link} >
-                                <li>{item.logo}</li>
-                            </Link>
-                        </ul>
-                    ))}
+                    <ul className={styles.subMenuOne}>
+                        {arrMenu.map((el, i) => (
+                            <li><Link href={el.link}>{el.title}</Link></li>
+                        ))}
+                    </ul>
+                    <ul className={styles.subMenuTwo}>
+                        {arr.map((item, i) => (
+                            <li key={i}>
+                                <Link href={item.link} >
+                                    {item.logo}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
+                <DropdownMenu>
+                    <DropdownMenuTrigger className="outline-none" onClick={() => setClose(!close)} >
+                        <RxHamburgerMenu className={styles.burger} />
+                    </DropdownMenuTrigger>
+                    <Drop arr={arr} arrMenu={arrMenu} />
+                </DropdownMenu>
             </div>
         </header>
     );
