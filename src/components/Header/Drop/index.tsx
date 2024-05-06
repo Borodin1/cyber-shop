@@ -15,7 +15,7 @@ export default function Drop({ arr, arrMenu, }: IDropProps) {
             <DropdownMenuLabel className={styles.label}>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator className={styles.separator} />
             {arrMenu.map((el, i) => (
-                <Link href={el.link} className={styles.arrMenu}>
+                <Link href={el.link} className={styles.arrMenu} key={i}>
                     <DropdownMenuItem className={styles.logo}>{el.logo}</DropdownMenuItem>
                     <DropdownMenuItem className={styles.title}>{el.title}</DropdownMenuItem>
                 </Link>

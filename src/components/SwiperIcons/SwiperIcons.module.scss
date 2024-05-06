@@ -1,0 +1,19 @@
+.swiper {
+  @apply my-36;
+
+  .button {
+    @apply flex w-[96%] justify-end mb-8;
+
+    .arrow {
+      @apply text-3xl;
+    }
+  }
+
+  .swiper-slide {
+    @apply w-[160px] flex justify-center;
+
+    .swiper-icon {
+      @apply w-[160px] h-[128px] bg-gray-200 rounded-lg flex justify-center items-center;
+    }
+  }
+}

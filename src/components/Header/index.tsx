@@ -39,7 +39,7 @@ export default function Header({ }: IHeaderProps) {
                 <div className={styles.menu}>
                     <ul className={styles.subMenuOne}>
                         {arrMenu.map((el, i) => (
-                            <li><Link href={el.link}>{el.title}</Link></li>
+                            <li key={i}><Link href={el.link}>{el.title}</Link></li>
                         ))}
                     </ul>
                     <ul className={styles.subMenuTwo}>
