@@ -40,7 +40,7 @@ export default function Tehnology({ }: ITehnologyProps) {
                         <Button variant={'ghost'} size={'lg'} >Shop Now</Button>
                     </div>
                     <div className={styles.img}>
-                        <Image src={'/MacBook.png'} alt="MacBook" width={659} height={459}/>
+                        <Image src={'/MacBook.png'} alt="MacBook" width={659} height={459} />
                     </div>
                 </div>
             </div>

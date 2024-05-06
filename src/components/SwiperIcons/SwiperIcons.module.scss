@@ -1,19 +1,39 @@
 .swiper {
   @apply my-36;
 
-  .button {
-    @apply flex w-[96%] justify-end mb-8;
+  .container {
+    @apply max-w-[1440px] mx-auto px-4 py-4;
 
-    .arrow {
-      @apply text-3xl;
+
+    .button {
+      @apply flex justify-between mb-8;
+
+      h2 {
+        @apply text-2xl font-medium;
+      }
+
+      .div {
+        @apply flex gap-4;
+
+        svg {
+          @apply cursor-pointer;
+        }
+      }
+
+      .arrow {
+        @apply text-3xl;
+      }
     }
   }
 
   .swiper-slide {
-    @apply w-[160px] flex justify-center;
+    @apply w-[100px] m-0;
 
     .swiper-icon {
-      @apply w-[160px] h-[128px] bg-gray-200 rounded-lg flex justify-center items-center;
+      @apply md:w-[160px] sm:w-[100px] w-[50px] md:h-[128px] sm:h-[90px] h-[50px]  bg-gray-200 rounded-lg flex justify-center items-center;
+      img{
+        @apply w-4 sm:w-10 md:w-auto;
+      }
     }
   }
 }
