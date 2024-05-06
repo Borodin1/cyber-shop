@@ -32,7 +32,7 @@
     .swiper-icon {
       @apply md:w-[160px] sm:w-[100px] w-[50px] md:h-[128px] sm:h-[90px] h-[50px]  bg-gray-200 rounded-lg flex justify-center items-center;
       img{
-        @apply w-4 sm:w-10 md:w-auto;
+        @apply w-4 sm:w-10 md:w-[50px];
       }
     }
   }

@@ -1,0 +1,17 @@
+.Tab {
+    .TabsList {
+        @apply flex gap-7 justify-start mb-8;
+        .TabsTrigger {
+            @apply text-lg;
+        }
+        .valid{
+            @apply border-b-[3px] border-b-black font-medium text-black 
+        }
+        .inValid{
+            @apply font-normal text-black/55;
+        }
+    }
+    .TabsContent{
+        @apply flex flex-wrap justify-start items-center gap-4
+    }
+}
