@@ -1,6 +1,6 @@
 .Tab {
     .TabsList {
-        @apply flex gap-7 justify-start mb-8;
+        @apply flex xls:gap-7 gap-4 max-xls:flex-wrap justify-center xls:justify-start mb-8 h-[100px] xls:h-auto;
         .TabsTrigger {
             @apply text-lg;
         }
@@ -12,6 +12,6 @@
         }
     }
     .TabsContent{
-        @apply flex flex-wrap justify-start items-center gap-4
+        @apply flex flex-wrap 2xl:justify-start justify-center items-center gap-4
     }
 }
