@@ -1,0 +1,23 @@
+.mainBanner {
+    @apply flex;
+    
+  .banner {
+    @apply w-[360px] h-[640px] flex flex-col justify-around;
+
+    .info{
+        @apply flex flex-col items-center;
+        
+        h2{
+            @apply text-4xl font-normal w-[296px];
+        }
+
+        p{
+            @apply text-sm font-normal text-gray-400 my-4 w-[296px];
+        }
+    }
+
+    button{
+        @apply border-solid border-black border-[1px] w-[181px] h-[56px] rounded ml-8;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import Banner from '~/components/Banner';
 import Hero from "~/components/Hero";
 import SwiperIcons from '~/components/SwiperIcons';
 import Tehnology from "~/components/Tehnology";
@@ -11,6 +12,7 @@ export default function Home() {
       <SwiperIcons/>
       <Wrapper/>
       <Wrapper isValidTab={false} isValidDiscount/>
+      <Banner/>
     </>
   );
 }
