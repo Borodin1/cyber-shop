@@ -1,4 +1,5 @@
 "use client"
+import Discount from './Discount'
 import Tab from './Tabs'
 import styles from './Wrapper.module.scss'
 interface IWrapperProps {
@@ -13,7 +14,7 @@ export default function Wrapper({ isValidTab = true, isValidDiscount = false }: 
         <div className={styles.root}>
             <div className={styles.container}>
                 {isValidTab && <Tab />}
-                {isValidDiscount && <>dsdssd</>}
+                {isValidDiscount && <Discount/>}
             </div>
         </div>
 

@@ -1,5 +1,5 @@
 .mainBanner {
-    @apply flex;
+    @apply flex justify-center flex-wrap;
     
   .banner {
     @apply w-[360px] h-[640px] flex flex-col justify-around;
