@@ -10,6 +10,7 @@ export default function Home() {
       <Tehnology/>
       <SwiperIcons/>
       <Wrapper/>
+      <Wrapper isValidTab={false} isValidDiscount/>
     </>
   );
 }
