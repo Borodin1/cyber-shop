@@ -8,6 +8,8 @@ class Pages {
     ABOUT = '/about'
     CONTACT = '/contact-us'
     BLOG = '/blog'
+
+    CATALOG = '/catalog'
 }
 
 export const PAGES_DASHBOARD = new Pages()

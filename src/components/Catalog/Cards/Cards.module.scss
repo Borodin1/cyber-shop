@@ -1,0 +1,41 @@
+.root {
+    .container {
+        @apply flex flex-col gap-6;
+
+        .info {
+            @apply flex items-start sm:gap-10 gap-4 sm:flex-row flex-col-reverse;
+            .filters{
+                @apply flex sm:gap-10 gap-4 sm:flex-row flex-row-reverse;
+            }
+            .Accordion {
+                @apply border border-black/10 px-3 rounded-md;
+            }
+
+            h2 {
+                @apply p-2 flex justify-center items-center gap-2;
+
+                span {
+                    @apply font-semibold text-xl;
+                }
+            }
+
+            .Link {
+                .button {
+                    @apply flex xxl:hidden justify-evenly items-center gap-2 border border-black/15;
+                }
+
+                svg {
+                    @apply text-xl;
+                }
+            }
+
+            button {
+                @apply no-underline w-[135px] p-2;
+            }
+        }
+
+        .cards {
+            @apply flex flex-wrap justify-evenly lg:justify-between max-w-[1100px];
+        }
+    }
+}

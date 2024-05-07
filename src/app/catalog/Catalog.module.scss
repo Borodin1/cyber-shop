@@ -2,5 +2,11 @@
     @apply w-full;
     .container {
         @apply max-w-[1440px] mx-auto px-4 py-4;
+        .cards{
+            @apply flex gap-8 justify-center;
+            .Hidden{
+                @apply xxl:block hidden;
+            }
+        }
     }
 }

@@ -7,10 +7,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/
 
 interface IFiltersProps { }
 export default function Filters({ }: IFiltersProps) {
-    const [input, setInput] = React.useState("");
+    const [input, setInput] = React.useState('');
+    const [range1, setRange1] = React.useState('');
+    const [range2, setRange2] = React.useState('');
     const [clickChecbox, setClickCheckbox] = React.useState("");
-    const data = MainArray({ input, styles, setClickCheckbox })
 
+    
+    const data = MainArray({ input, styles, setClickCheckbox, range1, range2, setRange1, setRange2 })
     return (
         <div className={styles.root}>
             <Accordion type="single" collapsible>
@@ -19,7 +22,7 @@ export default function Filters({ }: IFiltersProps) {
                         <div key={i}>
                             <AccordionTrigger className={styles.AccordionTrigger}>{el.value}</AccordionTrigger>
                             <AccordionContent className={styles.AccordionContent}>
-                                <InputCustom input={input} setInput={setInput} styles={styles} />
+                                {i !== 0 && (<InputCustom input={input} setInput={setInput} styles={styles} />)}
                                 {el.elem}
                             </AccordionContent>
                         </div>

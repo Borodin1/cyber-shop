@@ -1,0 +1,17 @@
+.root{
+    .container{
+        @apply flex flex-col justify-center items-start  max-w-[300px] mx-auto px-4 mb-9;
+        .return {
+            @apply flex items-center gap-4 py-10;
+            h2{
+                @apply text-2xl
+            }
+            svg{
+                @apply text-3xl
+            }
+        }
+        .button{
+            @apply w-full mt-5;
+        }
+    }
+}
