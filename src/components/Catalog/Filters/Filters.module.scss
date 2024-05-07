@@ -1,0 +1,35 @@
+.root {
+    @apply max-w-[265px];
+
+    .AccordionTrigger {
+        @apply text-lg font-medium no-underline;
+    }
+
+    .AccordionContent {
+        @apply flex flex-col items-start gap-4;
+
+        .input {
+            @apply relative;
+
+            input {
+                @apply bg-gray-200/50 outline-none px-4 py-2 rounded-lg pl-7 w-full;
+            }
+
+            .icon {
+                @apply absolute top-[10px] left-[7px] text-base;
+            }
+
+            .close {
+                @apply absolute right-[7px] top-[9px] text-lg cursor-pointer;
+            }
+        }
+
+        .Checkbox {
+            @apply flex flex-col items-start gap-2;
+
+            div {
+                @apply flex gap-2 items-center
+            }
+        }
+    }
+}

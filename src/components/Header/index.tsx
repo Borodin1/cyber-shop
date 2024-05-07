@@ -9,6 +9,7 @@ import { IoMdClose } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { arr, arrMenu } from "./arr";
 import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import InputCustom from "../_custom/input";
 
 
 interface IHeaderProps { }
@@ -20,21 +21,7 @@ export default function Header({ }: IHeaderProps) {
             <div className={styles.container}>
                 <div className={styles.inputLogo}>
                     <Image src={"/cyber.svg"} alt="logo" width={65} height={22} />
-                    <div className={styles.input}>
-                        <CiSearch className={styles.icon} />
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            onChange={(e) => setInput(e.target.value)}
-                            value={input}
-                        />
-                        {input && (
-                            <IoMdClose
-                                className={styles.close}
-                                onClick={() => setInput("")}
-                            />
-                        )}
-                    </div>
+                    <InputCustom input={input} setInput={setInput} styles={styles} />
                 </div>
                 <div className={styles.menu}>
                     <ul className={styles.subMenuOne}>

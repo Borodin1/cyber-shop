@@ -1,5 +1,5 @@
 .root {
-    @apply bg-black text-white xls:text-left text-center;
+    @apply bg-black text-white xls:text-left text-center mt-auto;
 
     .container {
         @apply max-w-[1120px] mx-auto flex xls:justify-between xls:items-start items-center md:flex-row flex-col gap-4 pt-[110px] pb-6 px-4;

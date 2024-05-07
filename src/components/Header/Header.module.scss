@@ -1,5 +1,5 @@
 .root {
-    @apply w-full;
+    @apply w-full bg-white border-b border-b-black/20;
 
     .container {
         @apply max-w-[1440px] mx-auto px-4 py-4 xs:py-8 flex gap-6 justify-between items-center;
@@ -11,11 +11,11 @@
                 @apply relative xs:block hidden;
 
                 input {
-                    @apply text-sm placeholder:opacity-55  w-[200px] sm:w-[350px] py-3 px-3 pl-9 bg-stone-200 rounded-md outline-none;
+                    @apply text-sm placeholder:opacity-55 w-[200px] sm:w-[350px] py-3 px-3 pl-9 bg-stone-200 rounded-md outline-none;
                 }
 
                 .icon {
-                    @apply absolute top-[14px] left-[7px] text-base
+                    @apply absolute top-[13px] left-[7px] text-base
                 }
 
                 .close {
