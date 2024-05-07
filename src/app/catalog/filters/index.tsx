@@ -8,20 +8,23 @@ import { PAGES_DASHBOARD } from "~/configs/pages"
 import { Button } from "~/components/ui/button";
 import { useRouter } from "next/navigation"
 
-interface IFiltersProps { }
+interface IFiltersProps {
+    filters: boolean
+    setFilters: (filters: boolean) => void
+}
 
-export default function Filters({ }: IFiltersProps) {
+export default function Filters({ filters, setFilters }: IFiltersProps) {
     const { push } = useRouter()
     function handleRequest() {
-        push(PAGES_DASHBOARD.CATALOG)
+        setFilters(true)
     }
     return (
         <div className={styles.root}>
             <div className={styles.container}>
-                <Link href={PAGES_DASHBOARD.CATALOG} className={styles.return}>
+                <div className={styles.return} onClick={() => setFilters(!filters)}>
                     <MdOutlineKeyboardArrowLeft />
                     <h2>Filters</h2>
-                </Link>
+                </div>
                 <Fill />
                 <Button variant={'default'} size={'lg'} onClick={handleRequest} className={styles.button}>Apply</Button>
             </div>

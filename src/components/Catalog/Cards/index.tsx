@@ -11,9 +11,10 @@ import Link from "next/link"
 import { PAGES_DASHBOARD } from "~/configs/pages"
 
 interface ICardsProps {
-
+    filters: boolean
+    setFilters: (filters: boolean) => void
 }
-export default function Cards({ }: ICardsProps) {
+export default function Cards({ filters, setFilters }: ICardsProps) {
     const [click, setClick] = React.useState(1)
     return (
         <div className={styles.root}>
@@ -29,12 +30,12 @@ export default function Cards({ }: ICardsProps) {
                                 </AccordionContent>
                             </AccordionItem>
                         </Accordion>
-                        <Link href={`${PAGES_DASHBOARD.CATALOG}/filters`} className={styles.Link}>
-                            <Button size={'lg'} variant={'ghost'} className={styles.button}>
+                        <div className={styles.Link}>
+                            <Button size={'lg'} variant={'ghost'} className={styles.button} onClick={() => setFilters(!filters)}>
                                 <h3>Filters</h3>
                                 <IoIosOptions />
                             </Button>
-                        </Link>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.cards}>
@@ -68,7 +69,7 @@ export default function Cards({ }: ICardsProps) {
                     </PaginationContent>
                 </Pagination>
             </div>
-        </div>
+        </div >
     )
 
 }
