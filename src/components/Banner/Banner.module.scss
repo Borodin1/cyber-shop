@@ -24,7 +24,7 @@
 
 .mobileBanner {
   .mobileBannerSlide {
-    @apply w-[375px] h-[688px] flex  items-center flex-col justify-center;
+    @apply w-full h-[688px] flex  items-center flex-col justify-center;
 
 
     .mobileBannerInfo{
