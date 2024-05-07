@@ -5,17 +5,34 @@ import Image from "next/image";
 import { arr } from "./arr";
 import Link from "next/link";
 
-import { isMobile } from "react-device-detect";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import { useEffect, useState } from 'react';
 
 export default function Banner() {
-  if (isMobile) {
+    const [isMobileScreen, setIsMobileScreen] = useState(false);
+
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+        setIsMobileScreen(window.innerWidth <= 768);
+  
+        const handleResize = () => {
+          setIsMobileScreen(window.innerWidth <= 768);
+        };
+  
+        window.addEventListener('resize', handleResize);
+  
+        return () => window.removeEventListener('resize', handleResize);
+      }
+    }, []);
+      
+  if (isMobileScreen) {
     return (
       <div>
         <Swiper
           modules={[Pagination]}
           pagination={{ clickable: true }}
+          loop={true    }
           className={styles.mobileBanner}>
           {arr.map((item, i) => (
             <SwiperSlide key={i}>
@@ -26,7 +43,7 @@ export default function Banner() {
                   <Image
                     src={item.logo}
                     alt={item.title}
-                    width={200}
+                    width={300}
                     height={200}
                   />
                 </div>
@@ -35,7 +52,7 @@ export default function Banner() {
                   <p>{item.description}</p>
                 </div>
                 <button style={{ color: item?.textC, borderColor: item?.textC }}>
-                  <Link href="/">Shop Now</Link>
+                  <Link href="/catalog">Shop Now</Link>
                 </button>
               </div>
             </SwiperSlide>
@@ -61,7 +78,7 @@ export default function Banner() {
             </div>
 
             <button style={{ color: item?.textC, borderColor: item?.textC }}>
-              <Link href="/">Shop Now</Link>
+              <Link href="/catalog">Shop Now</Link>
             </button>
           </div>
         ))}

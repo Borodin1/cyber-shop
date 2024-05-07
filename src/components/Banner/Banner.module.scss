@@ -1,28 +1,47 @@
 .mainBanner {
-    @apply flex justify-center flex-wrap;
-    
+  @apply flex justify-center flex-wrap;
+
   .banner {
     @apply w-[360px] h-[640px] flex flex-col justify-around;
 
-    .info{
-        @apply flex flex-col items-center;
-        
-        h2{
-            @apply text-4xl font-normal w-[296px];
-        }
+    .info {
+      @apply flex flex-col items-center;
 
-        p{
-            @apply text-sm font-normal text-gray-400 my-4 w-[296px];
-        }
+      h2 {
+        @apply text-4xl font-normal w-[296px];
+      }
+
+      p {
+        @apply text-sm font-normal text-gray-400 my-4 w-[296px];
+      }
     }
 
-    button{
-        @apply border-solid border-black border-[1px] w-[181px] h-[56px] rounded ml-8;
+    button {
+      @apply border-solid border-black border-[1px] w-[181px] h-[56px] rounded ml-8;
     }
   }
 }
 
+.mobileBanner {
+  .mobileBannerSlide {
+    @apply w-[375px] h-[688px] flex  items-center flex-col justify-center;
 
-.mobileBannerSlide{
-    @apply w-[375px] h-[688px];
+
+    .mobileBannerInfo{
+
+        @apply flex flex-col items-center w-[311px] h-[200px] justify-evenly;
+
+        h2{
+        @apply text-5xl font-normal text-center; 
+        }
+
+        p{
+            @apply text-xs font-normal text-gray-400;
+        }
+    }
+
+    button {
+        @apply border-solid border-black border-[1px] w-[181px] h-[56px] rounded;
+      }
+  }
 }
