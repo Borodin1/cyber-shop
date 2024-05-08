@@ -2,9 +2,9 @@
 "use client"
 import React from "react"
 import Filters from "~/components/Catalog/Filters"
-import Fill from "~/app/catalog/filters"
-import styles from './Catalog.module.scss'
-import Paths from "~/components/Catalog/Paths"
+import Fill from "~/app/catalog/smartphones/filters"
+import styles from '../Catalog.module.scss'
+import Paths from "~/components/Paths"
 import Cards from "~/components/Catalog/Cards"
 
 interface ICatalogProps { }

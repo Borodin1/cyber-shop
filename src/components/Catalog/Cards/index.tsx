@@ -3,7 +3,7 @@
 import React from "react"
 import styles from './Cards.module.scss'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion"
-import Cart from "~/components/Wrapper/Cart"
+import Cart from "~/components/Cart"
 import { PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationEllipsis, PaginationNext, Pagination } from "~/components/ui/pagination"
 import { Button } from "~/components/ui/button"
 import { IoIosOptions } from "react-icons/io";

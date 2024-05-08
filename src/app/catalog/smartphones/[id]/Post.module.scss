@@ -1,0 +1,283 @@
+.root {
+    .container {
+        @apply max-w-[1440px] mx-auto px-4 py-4;
+
+        .main {
+            @apply md:py-[112px] py-[40px] flex lg:flex-row flex-col xl:gap-12 gap-4 justify-around items-center xl:justify-center;
+
+            .wrapperLogos {
+                @apply flex xlg:flex-row flex-col-reverse items-center gap-11;
+
+                .subLogos {
+                    @apply flex xlg:flex-col flex-row sxs:gap-7 gap-3 sxs:p-0;
+
+                    div {
+                        @apply sxs:w-[74px] w-[60] sxs:h-[100px] h-[89px] rounded-md;
+
+                        img {
+                            @apply max-w-full;
+                        }
+                    }
+                }
+
+                .mainLogo {
+                    @apply sxs:w-[416px] w-[300px] sxs:h-[516px] h-[400px] flex justify-center items-center rounded-md;
+
+                    img {
+                        @apply max-w-full
+                    }
+                }
+            }
+
+            .info {
+                @apply flex flex-col gap-6 md:w-[490px] sxs:w-[340px] w-[300px] xl:w-[565px] px-2;
+
+                h2 {
+                    @apply sxs:text-5xl text-3xl;
+                }
+
+                .prices {
+                    @apply flex gap-4 items-center;
+                }
+
+                .colors {
+                    @apply flex sxs:items-center flex-col sxs:flex-row gap-4;
+
+                    .colorsArray {
+                        @apply flex gap-4;
+
+                        p {
+                            @apply rounded-full;
+                        }
+                    }
+                }
+
+                .memorys {
+                    @apply grid lg:grid-cols-4 grid-cols-2 lg:justify-items-center justify-items-start gap-4 lg:max-w-[565px] w-[200px];
+
+                    .memory {
+                        @apply lg:w-[122px] w-[100px] px-6 py-4 cursor-pointer flex justify-center items-center rounded-lg;
+                    }
+                }
+
+                .characteristics {
+                    @apply grid lg:grid-cols-3 grid-cols-2 lg:grid-rows-2 grid-rows-3 xl:w-[540px] md:w-[516px] sxs:w-[341px] w-[300px] gap-4;
+
+                    .characteristicsItem {
+                        @apply flex items-center gap-2 p-4 max-h-[64px] bg-slate-200/30 rounded-lg;
+
+                        svg {
+                            @apply text-2xl
+                        }
+
+                        p {
+                            @apply flex flex-col;
+
+                            span {
+                                @apply text-black/45;
+
+                                &:last-child {
+                                    @apply font-semibold text-black
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .descriprion {
+                    @apply max-w-[560px];
+                }
+
+                .buttons {
+                    @apply flex flex-col items-center lg:flex-row lg:gap-6 gap-3;
+
+                    button {
+                        @apply px-16 py-6 sxs:w-full w-[300px];
+                    }
+                }
+
+                .delivery {
+                    @apply flex justify-between md:flex-row flex-col gap-3 md:gap-0;
+
+                    .deliveryItem {
+                        @apply flex items-center gap-4;
+
+                        svg {
+                            @apply text-2xl
+                        }
+
+                        p {
+                            @apply flex flex-col;
+
+                            span {
+                                @apply font-extralight;
+
+                                &:last-child {
+                                    @apply font-semibold
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .details {
+            @apply pt-12 pb-6 px-10 flex flex-col gap-8;
+
+            .h2 {
+                @apply text-2xl font-medium;
+            }
+
+            .p {
+                @apply text-black/40
+            }
+
+            .screen {
+                @apply flex flex-col gap-4;
+
+                h2 {
+                    @apply text-xl font-medium;
+                }
+
+                .screenOptions {
+                    @apply flex flex-col gap-6;
+
+                    .separator {
+                        @apply flex justify-between items-start border-b border-b-black/15 pb-2;
+
+                        p:last-child {
+                            @apply max-w-[118px] text-right
+                        }
+                    }
+                }
+            }
+
+            .cpu {
+                @apply flex flex-col gap-4;
+
+                h2 {
+                    @apply text-xl font-medium;
+                }
+
+                .cpuOptions {
+                    @apply flex flex-col gap-6;
+
+                    .separator {
+                        @apply flex justify-between items-start border-b border-b-black/15 pb-2;
+                    }
+                }
+            }
+        }
+
+        .button {
+            @apply flex items-center gap-3 max-w-[208px] mx-auto;
+
+            svg {
+                @apply text-xl
+            }
+        }
+
+        .reviews {
+            @apply pt-12 pb-6 px-10;
+
+            .h1 {
+                @apply text-2xl font-medium mb-12;
+            }
+
+            .rating {
+                @apply flex justify-between items-center md:flex-row flex-col;
+
+                .stars {
+                    @apply flex flex-col gap-4 justify-center items-center p-8;
+
+                    h1 {
+                        @apply text-6xl;
+                    }
+
+                    p {
+                        @apply text-black/20
+                    }
+
+                    .star {
+                        @apply flex gap-1;
+                    }
+
+                }
+
+                .input {
+                    @apply flex flex-col md:w-[876px] sm:w-[476px] sxs:w-[344px] w-[250px] sxs:gap-1 gap-0;
+
+                    .line {
+                        @apply relative xlg:w-[664px] sxs:w-[300px] w-[100px] mb-1;
+
+                        .lineOne {
+                            @apply w-full bg-black/15 h-[6px] absolute top-0 rounded-full;
+                        }
+
+                        .lineTwo {
+                            @apply absolute h-[6px] top-0 rounded-full bg-yellow-500;
+                        }
+                    }
+
+                    .inputOne {
+                        @apply flex justify-between items-center;
+
+                        h3 {
+                            @apply md:w-[113px] w-[90px] text-sm;
+                        }
+
+                        h4 {
+                            @apply text-black/30;
+                        }
+                    }
+                }
+            }
+        }
+
+        .comments {
+            @apply flex flex-col p-6;
+
+            .comment {
+                @apply flex items-start justify-between gap-[19px];
+
+                img {
+                    @apply rounded-full max-w-full;
+                }
+
+                .info {
+                    @apply flex flex-col gap-2;
+
+                    .create {
+                        @apply flex justify-between items-center;
+
+                        h3 {
+                            @apply text-lg font-bold;
+                        }
+
+                        p {
+                            @apply text-black/20
+                        }
+                    }
+
+                    .stars {
+                        @apply flex gap-1;
+                    }
+                }
+
+            }
+        }
+
+        .related {
+            @apply flex flex-col gap-8;
+
+            .h3 {
+                @apply text-2xl font-medium;
+            }
+
+            .cards {
+                @apply flex flex-wrap justify-center items-center gap-4;
+            }
+        }
+    }
+}

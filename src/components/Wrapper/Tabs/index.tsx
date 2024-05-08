@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Tabs.module.scss'
-import Cart from '../Cart';
+import Cart from '../../Cart';
 import { TabsList, TabsTrigger, TabsContent, Tabs } from "~/components/ui/tabs";
 
 const arr = ["New Arrival", "Bestseller", "Featured Products"]

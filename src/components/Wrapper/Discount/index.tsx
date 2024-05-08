@@ -1,7 +1,7 @@
 "use client"
 import React from "react"
 import styles from './Discount.module.scss'
-import Cart from "../Cart"
+import Cart from "../../Cart"
 interface IDiscountProps { }
 
 export default function Discount({ }: IDiscountProps) {
