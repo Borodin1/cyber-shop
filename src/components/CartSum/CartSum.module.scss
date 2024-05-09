@@ -1,0 +1,45 @@
+.cartSum {
+  @apply w-[536px] h-[656px] flex flex-col items-center border border-gray-400 rounded-s-xl justify-center;
+
+  .cartLink{
+    @apply w-[408px] h-[56px] flex justify-center items-center bg-black text-white cursor-pointer mt-10;
+  }
+
+  .cartTitle {
+    @apply w-[77%];
+
+    h2 {
+      @apply text-xl font-bold;
+    }
+  }
+
+  .cartInput {
+    @apply flex flex-col my-6;
+
+    label {
+      @apply text-sm mb-2;
+    }
+
+    input {
+      @apply border-[0.5px] border-gray-400 rounded-lg py-4 pl-4 w-[408px] h-[56px];
+    }
+
+    button {
+      @apply absolute right-[280px] top-[515px] border border-black rounded-[10px] p-2 w-[78px] text-xs;
+    }
+  }
+
+  .cartSummary {
+    @apply w-[408px] h-[168px] flex flex-col justify-between;
+
+    div {
+      @apply flex justify-between;
+    }
+
+    .cartTax {
+      h3 {
+        @apply text-gray-400;
+      }
+    }
+  }
+}
