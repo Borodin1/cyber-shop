@@ -1,0 +1,37 @@
+.cartItems{
+    @apply flex justify-around items-center border-b border-gray-400 w-[536px] py-10;
+
+
+    button{
+        @apply text-xl ;
+    }
+    .cartImage{
+        @apply w-[90px] h-[90px];
+    }
+
+    .cartInfo{
+        h2{
+            @apply w-[191px] text-base font-normal; 
+        }
+
+        p{
+            @apply text-sm font-normal mt-2;
+        }
+    }
+
+    .cartCount{
+        button{
+            @apply text-xl mx-2;
+        }
+
+        span{
+            @apply border-[0.5px] border-gray-400 rounded-sm p-1 px-4;
+        }
+    }
+
+    .cartPrice{
+        h3{
+            @apply text-xl font-semibold;
+        }
+    }
+}
