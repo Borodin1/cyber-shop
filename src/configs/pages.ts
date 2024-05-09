@@ -10,6 +10,7 @@ class Pages {
     BLOG = '/blog'
 
     CATALOG = '/catalog'
+    BUYING = '/buying'
 }
 
 export const PAGES_DASHBOARD = new Pages()

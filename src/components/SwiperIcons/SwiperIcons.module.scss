@@ -1,5 +1,5 @@
 .swiper {
-  @apply my-36;
+  @apply my-36 hidden lg:block;
 
   .container {
     @apply max-w-[1440px] mx-auto px-4 py-4;
@@ -30,9 +30,9 @@
     @apply w-[100px] m-0;
 
     .swiper-icon {
-      @apply md:w-[160px] sm:w-[100px] w-[50px] md:h-[128px] sm:h-[90px] h-[50px]  bg-gray-200 rounded-lg flex justify-center items-center;
-      img{
-        @apply w-4 sm:w-10 md:w-[50px];
+      @apply md:w-[160px] sm:w-[100px] w-[50px] md:h-[128px] sm:h-[90px] h-[50px]  bg-gray-200 rounded-lg flex flex-col gap-2 justify-center items-center;
+      svg{
+        @apply text-5xl;
       }
     }
   }
