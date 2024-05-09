@@ -4,8 +4,7 @@ import Sale from "~/components/Sale";
 import SwiperIcons from "~/components/SwiperIcons";
 import Tehnology from "~/components/Tehnology";
 import Wrapper from "~/components/Wrapper";
-
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Hero />
@@ -14,7 +13,7 @@ export default function Home() {
       <Wrapper />
       <Banner />
       <Wrapper isValidTab={false} isValidDiscount />
-      <Sale/>
+      <Sale />
     </>
   );
 }

@@ -1,0 +1,86 @@
+.root {
+    .container {
+        @apply max-w-[1440px] mx-auto px-4;
+
+        .road {
+            @apply max-w-[1120px] mx-auto flex gap-3 flex-wrap sxs:justify-between justify-center items-center sm:py-[72px] py-[50px];
+
+            .item {
+                @apply flex justify-between items-center gap-2;
+
+                svg {
+                    @apply bg-black rounded-full text-white w-[30px] h-[30px] p-2;
+                }
+
+                p {
+                    @apply flex flex-col;
+
+                    span:last-child {
+                        @apply sm:text-xl text-lg font-medium
+                    }
+                }
+            }
+        }
+
+        h2 {
+            @apply text-xl pb-8;
+        }
+
+        .adress {
+            @apply mt-12;
+
+            .item {
+                @apply flex items-start p-6 gap-2;
+
+                button {
+                    @apply mt-1
+                }
+
+                .info {
+                    @apply flex sm:gap-4 gap-2 items-center justify-between w-full mx-auto;
+
+                    .Flex {
+                        @apply flex flex-col gap-4;
+
+                        h3 {
+                            @apply font-semibold text-lg;
+                        }
+                    }
+
+                    .icon {
+                        @apply flex gap-3 items-center;
+
+                        svg {
+                            @apply text-xl cursor-pointer;
+
+                            &:last-child {
+                                @apply text-3xl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .addAdress {
+            @apply py-12 flex justify-center relative;
+
+            .separator {
+                @apply border border-dashed rounded-full border-black absolute top-1/2 left-0 right-0 z-[-1];
+            }
+
+            svg {
+                @apply bg-black text-white text-4xl p-1 cursor-pointer rounded-full
+            }
+
+        }
+
+        .buttons {
+            @apply flex justify-end gap-4 mb-12;
+
+            button {
+                @apply w-[207px] h-16 text-base;
+            }
+        }
+    }
+}

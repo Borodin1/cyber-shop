@@ -1,70 +1,17 @@
 //icons
-import camera from "../../../public/icons/Icon_Cameras.png";
-import computer from "../../../public/icons/Icon_Computers.png";
-import gaming from "../../../public/icons/Icon_Gaming.png";
-import headphones from "../../../public/icons/Icon_Headphones.png";
-import phones from "../../../public/icons/Icon_Phones.png";
-import smartwatches from "../../../public/icons/Icon_SmartWatches.png";
+import { MdPhoneIphone } from "react-icons/md";
+import { TbDeviceWatch } from "react-icons/tb";
+import { CiCamera } from "react-icons/ci";
+import { CiHeadphones } from "react-icons/ci";
+import { HiMiniComputerDesktop } from "react-icons/hi2";
+import { MdOutlineVideogameAsset } from "react-icons/md";
+import { PAGES_DASHBOARD } from "~/configs/pages";
 
 export const arr = [
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
-  { icon: phones, title: "Phones" },
-  { icon: smartwatches, title: "SmartWatches" },
-  { icon: camera, title: "Cameras" },
-  { icon: headphones, title: "Headphones" },
-  { icon: computer, title: "Computers" },
-  { icon: gaming, title: "Gaming" },
+  { icon: <MdPhoneIphone />, title: "Phones", link: `${PAGES_DASHBOARD.CATALOG}/smartphones` },
+  { icon: <TbDeviceWatch />, title: "Smart Watches", link: `${PAGES_DASHBOARD.CATALOG}/#` },
+  { icon: <CiCamera />, title: "Cameras", link: `${PAGES_DASHBOARD.CATALOG}/#` },
+  { icon: <CiHeadphones />, title: "Headphones", link: `${PAGES_DASHBOARD.CATALOG}/#` },
+  { icon: <HiMiniComputerDesktop />, title: "Computers", link: `${PAGES_DASHBOARD.CATALOG}/#` },
+  { icon: <MdOutlineVideogameAsset />, title: "Gaming", link: `${PAGES_DASHBOARD.CATALOG}/#` },
 ];

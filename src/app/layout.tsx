@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "~/components/Header";
-
-
+import { Toaster } from "~/components/ui/sonner"
 import "./globals.scss";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -28,7 +27,8 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <Header />
         {children}
-        <Footer/>
+        <Footer />
+        <Toaster />
       </body>
     </html>
   );
