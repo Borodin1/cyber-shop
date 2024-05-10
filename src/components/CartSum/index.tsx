@@ -14,8 +14,10 @@ export default function CartSum() {
 
       <div className={styles.cartInput}>
         <label>Your bonus card number</label>
+        <div className={styles.cartInputContainer}>
         <input type="text" placeholder="Enter Card Number" />
         <button>Apply</button>
+        </div>
       </div>
 
       <div className={styles.cartSummary}>
