@@ -1,0 +1,30 @@
+.Card {
+    @apply max-w-[458px] mx-auto my-10 px-4;
+
+    .Tabs {
+        .Header {
+            .List {
+                @apply justify-start gap-6;
+
+                button {
+                    @apply text-xl;
+                }
+
+                .Arter {
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        height: 2px;
+                        border-radius: 99999px;
+                        width: 100%;
+                        background: #000;
+                    }
+                }
+            }
+        }
+    }
+}
