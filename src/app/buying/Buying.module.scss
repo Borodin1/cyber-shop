@@ -76,11 +76,115 @@
         }
 
         .buttons {
-            @apply flex justify-end gap-4 mb-12;
+            @apply flex sm:justify-end flex-wrap justify-center gap-4 mb-12;
 
             button {
                 @apply w-[207px] h-16 text-base;
             }
         }
+
+        .snipnet {
+            @apply flex flex-col gap-8;
+
+            h2 {
+                @apply lg:text-2xl text-lg p-0;
+            }
+
+            .method {
+                @apply pb-6;
+
+                .item {
+                    @apply flex flex-col lg:flex-row items-start lg:items-center gap-3 justify-between border border-black/20 rounded-xl p-6;
+
+                    .info {
+                        @apply flex items-center gap-4;
+                    }
+                }
+            }
+        }
+
+        .main {
+            @apply flex justify-between gap-5 flex-col lg:flex-row;
+
+            .buyElems {
+                @apply flex flex-col gap-4;
+
+                .buyElem {
+                    @apply flex items-center justify-between p-4;
+
+                    h3 {
+                        @apply font-medium;
+                    }
+
+                    p {
+                        @apply font-bold;
+                    }
+                }
+            }
+
+            .info {
+                @apply flex justify-between flex-col gap-4;
+
+                h4 {
+                    @apply text-sm font-medium text-black/40;
+                }
+
+                h3 {
+                    @apply text-base font-normal
+                }
+            }
+
+            .totalSection {
+                @apply flex flex-col gap-5;
+
+                .item {
+                    @apply flex justify-between;
+
+                    p {
+                        @apply text-xl font-semibold
+                    }
+                }
+
+                .itemOpa {
+                    @apply flex justify-between;
+
+                    p {
+                        @apply text-black/50
+                    }
+                }
+
+                .total {
+                    @apply flex justify-between;
+
+                    p {
+                        @apply text-xl font-semibold
+                    }
+                }
+            }
+
+            .TabsContent{
+                @apply flex flex-col gap-10;
+                .inputs{
+                    @apply grid grid-cols-4 grid-rows-3 gap-4;
+                    input{
+                        @apply border-black/20 h-12;
+                        &:nth-child(1){
+                            @apply col-start-1 col-end-5;
+                        }
+                        &:nth-child(2){
+                            @apply col-start-1 col-end-5 ;
+                        }
+                        &:nth-child(3){
+                            @apply col-start-1 col-end-3;
+                        }
+                        &:nth-child(4){
+                            @apply col-start-3 col-end-5;
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }

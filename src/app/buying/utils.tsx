@@ -13,13 +13,24 @@ export const arr = [
 ]
 interface IRoad {
     styles: any
+    url: string
 }
-export function Road({ styles }: IRoad) {
+export function Road({ styles, url }: IRoad) {
     return (
         <div className={styles.road}>
             {arr.map((el, i) => (
-                <div key={i} className={`${styles.item} ${i === 0  ? 'opacity-30' : ''}`}>
-                    {el.icon}
+                <div key={i} className={`${styles.item}
+                 ${(url.includes('/step-one') && i !== 0)
+                        ? "opacity-30"
+                        : ''}
+                 ${(url.includes('/step-two') && i !== 1)
+                        ? "opacity-30"
+                        : ''}
+                 ${(url.includes('/step-three') && i !== 2)
+                        ? "opacity-30"
+                        : ''}
+                 `}>
+                    <FaLocationDot />
                     <p>
                         <span>Step {i + 1}</span>
                         <span>{el.title}</span>
