@@ -9,11 +9,13 @@ import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormLabel, FormMessage } from '~/components/ui/form'
-import { Label } from '~/components/ui/label'
 import { Button } from '~/components/ui/button'
-import Cart from '~/components/Cart'
+import { useSignInMutation, useSignUpMutation } from '~/gql/_generated'
+import { useRouter } from 'next/navigation'
+import { PAGES_DASHBOARD } from '~/configs/pages'
 
 export default function Auth() {
+    const { push } = useRouter()
     const arr = ['Register', 'Log-in']
     const [index, setIndex] = React.useState(0)
     const formSchemaRegister = z.object({
@@ -40,12 +42,37 @@ export default function Auth() {
             password: '',
         }
     })
+    const [signUp, { data: dataRegister }] = useSignUpMutation({
+        variables: {
+            input: {
+                email: formRegister.getValues().email,
+                password: formRegister.getValues().password,
+                username: formRegister.getValues().username,
+            }
+        }
+    })
+    const [signIn, { data: dataLogin }] = useSignInMutation({
+        variables: {
+            input: {
+                email: formLogin.getValues().email,
+                password: formLogin.getValues().password,
+            }
+        }
+    })
+    if (dataRegister?.signUp.accessToken) {
+        push(PAGES_DASHBOARD.HOME)
+        localStorage.setItem('Bearer', dataRegister?.signUp.accessToken)
+    }
+    if (dataLogin?.signIn.accessToken) {
+        push(PAGES_DASHBOARD.HOME)
+        localStorage.setItem('Bearer', dataLogin?.signIn.accessToken)
+    }
 
     function handleRegister(value: z.infer<typeof formSchemaRegister>) {
-        console.log(value);
+        signUp()
     }
     function handleLogin(value: z.infer<typeof formSchemaLogin>) {
-        console.log(value);
+        signIn()
     }
 
     return (

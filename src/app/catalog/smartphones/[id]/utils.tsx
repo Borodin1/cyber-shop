@@ -32,12 +32,38 @@ export const sreensArr = [
     { title: 'Additionally', desc: 'Dynamic Island-Always-On display HDR display True Tone Wide color (P3)' }
 ]
 
+export interface GetOne {
+    Battery: number
+    CPU: string
+    FrontCamera: string
+    MainCamera: string
+    brand: string
+
+    description: string
+
+    screenType: string
+    memory: number[]
+    pixelDebcity: string
+
+    screenResolution: string
+    screenSize: string
+}
+
 
 interface IInfoProps {
     styles: any
     memory: number
     color: number
     price: number
+    title: string
+    prices: number[]
+    colors: string[]
+    memorys: number[]
+    FrontCamera: string
+    MainCamera: string
+    cpu: string
+    Battery: number
+    screenSize: string
     setMemory: (memory: number) => void
     setColor: (color: number) => void
     setPrice: (price: number) => void
@@ -45,8 +71,17 @@ interface IInfoProps {
 export function Info({
     styles,
     memory,
+    memorys,
     color,
     price,
+    prices,
+    title,
+    FrontCamera,
+    MainCamera,
+    cpu,
+    colors,
+    Battery,
+    screenSize,
     setMemory,
     setColor,
     setPrice,
@@ -54,9 +89,9 @@ export function Info({
     return (
         <>
             <div className={styles.info}>
-                <h2>Apple iPhone 14 Pro Max</h2>
+                <h2>{title}</h2>
                 <div className={styles.prices}>
-                    {['1399', '1499'].map((el, i) => (
+                    {prices.map((el, i) => (
                         <p
                             onClick={() => setPrice(i)}
                             key={i}
@@ -67,10 +102,10 @@ export function Info({
                 <div className={styles.colors}>
                     <p>Select color :</p>
                     <div className={styles.colorsArray}>
-                        {['bg-slate-400', 'bg-red-600', 'bg-purple-700', 'bg-orange-600', 'bg-black'].map((el, i) => (
+                        {colors.map((el, i) => (
                             <p
                                 onClick={() => setColor(i)}
-                                className={`w-8 h-8 ${el} 
+                                className={`w-8 h-8 bg-[${el}] 
                             ${i === color ? 'border-[5px] border-stone-500' : ''}`}
                                 key={i}
                             ></p>
@@ -78,7 +113,7 @@ export function Info({
                     </div>
                 </div>
                 <div className={styles.memorys}>
-                    {['128', '256', '512', '1',].map((el, i) => (
+                    {memorys.map((el, i) => (
                         <div
                             onClick={() => setMemory(i)}
                             className={`${styles.memory} ${i === memory ? 'border border-black text-black' : 'border text-black/40 border-black/20'}`}
@@ -87,11 +122,25 @@ export function Info({
                 </div>
                 <div className={styles.characteristics}>
                     {[...new Array(6)].map((_, i) => (
-                        <div className={styles.characteristicsItem}>
+                        <div className={styles.characteristicsItem} key={i}>
                             {arrLogos[i].el}
                             <p>
                                 <span>{arrLogos[i].title}</span>
-                                <span>6.7</span>
+                                <span>
+                                    {i === 0
+                                        ? screenSize
+                                        : i === 1
+                                            ? cpu
+                                            : i === 2
+                                                ? screenSize
+                                                : i === 3
+                                                    ? MainCamera
+                                                    : i === 4
+                                                        ? FrontCamera
+                                                        : i === 5
+                                                            ? Battery
+                                                            : ''}
+                                </span>
                             </p>
                         </div>
                     ))}
@@ -99,12 +148,12 @@ export function Info({
                 <div className={styles.descriprion}>Enhanced capabilities thanks toan enlarged display of 6.7 inchesand work without rechargingthroughout the day. Incredible photosas in weak, yesand in bright lightusing the new systemwith two cameras more...</div>
                 <div className={styles.buttons}>
                     {['Add to Wishlist', 'Add to Card'].map((el, i) => (
-                        <Button size={'lg'} variant={i === 0 ? 'outline' : 'default'}>{el}</Button>
+                        <Button size={'lg'} key={i} variant={i === 0 ? 'outline' : 'default'}>{el}</Button>
                     ))}
                 </div>
                 <div className={styles.delivery}>
                     {arrDelivery.map((el, i) => (
-                        <div className={styles.deliveryItem}>
+                        <div className={styles.deliveryItem} key={i}>
                             {el.el}
                             <p>
                                 <span>{el.title}</span>
@@ -118,20 +167,38 @@ export function Info({
 }
 interface IDetailsProps {
     styles: any
+    screenSize: string
+    description: string
+    screenResolution: string
+    screenType: string
 }
-export function Details({ styles }: IDetailsProps) {
+export function Details({ styles, ...data }: IDetailsProps) {
     return (
         <>
             <div className={styles.details}>
                 <h2 className={styles.h2}>Details</h2>
-                <p className={styles.p}>Just as a book is judged by its cover, the first thing you notice when you pick up a modern smartphone is the display. Nothing surprising, because advanced technologies allow you to practically level the display frames and cutouts for the front camera and speaker, leaving no room for bold design solutions. And how good that in such realities Apple everything is fine with displays. Both critics and mass consumers always praise the quality of the picture provided by the products of the Californian brand. And last year's 6.7-inch Retina panels, which had ProMotion, caused real admiration for many.</p>
+                <p className={styles.p}>{data.description}</p>
                 <div className={styles.screen}>
                     <h2>Screen</h2>
                     <div className={styles.screenOptions}>
                         {sreensArr.map((el, i) => (
                             <div key={i} className={styles.separator}>
                                 <p>{el.title}</p>
-                                <p>{el.desc}</p>
+                                <p>{i === 0
+                                    ? data.screenSize
+                                    : i === 1
+                                        ? data.screenResolution
+                                        : i === 2
+                                            ? sreensArr[2].desc
+                                            : i === 3
+                                                ? sreensArr[3].desc
+                                                : i === 4
+                                                    ? data.screenType
+                                                    : i === 5
+                                                        ? sreensArr[5].desc
+                                                        : ''
+                                }
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -166,15 +233,15 @@ export function Reviews({ styles, input }: IReviewsProps) {
                         <p>of 125 reviews</p>
                         <div className={styles.star}>
                             {[...new Array(5)].map((_, i) => (
-                                <Image src={'/Star.svg'} alt="star" width={24} height={24} />
+                                <Image key={i} src={'/Star.svg'} alt="star" width={24} height={24} />
                             ))}
                         </div>
                     </div>
                     <div className={styles.input}>
                         {['Excellent', 'Good', 'Average', 'Below Average', 'Poor'].map((el, i) => (
-                            <div className={styles.inputOne}>
+                            <div className={styles.inputOne} key={i}>
                                 <h3>{el}</h3>
-                                <div key={i} className={styles.line}>
+                                <div className={styles.line}>
                                     <div className={styles.lineOne}></div>
                                     <Image src={'/line.svg'} alt="line" height={6} width={input} className={styles.lineTwo} />
                                 </div>
@@ -191,16 +258,17 @@ interface ILogosProps {
     styles: any
     index: number
     setIndex: (index: number) => void
+    logos: string[]
 }
-export function Logos({ styles, index, setIndex }: ILogosProps) {
+export function Logos({ styles, index, setIndex, logos }: ILogosProps) {
     return (
         <>
             <div className={styles.wrapperLogos}>
                 <div className={styles.subLogos}>
-                    {[...new Array(4)].map((_, i) => (
-                        <div className={`${index === i ? 'opacity-55' : ''}`}>
+                    {logos?.map((el, i) => (
+                        <div key={i} className={`${index === i ? 'opacity-55' : ''}`}>
                             <Image
-                                src={'/FullPostIphone.png'}
+                                src={el}
                                 alt="iphone"
                                 width={74}
                                 height={76}
@@ -211,7 +279,7 @@ export function Logos({ styles, index, setIndex }: ILogosProps) {
                 </div>
                 <div className={styles.mainLogo}>
                     <Image
-                        src={'/FullPostIphone.png'}
+                        src={logos ? logos[index] : ''}
                         alt="iphone"
                         width={416}
                         height={516} />
@@ -236,7 +304,7 @@ export function Comments({ styles }: ICommentsProps) {
                         </div>
                         <div className={styles.stars}>
                             {[...new Array(5)].map((_, i) => (
-                                <Image src={'/Star.svg'} alt="star" width={24} height={24} />
+                                <Image key={i} src={'/Star.svg'} alt="star" width={24} height={24} />
                             ))}
                         </div>
                         <p>I was a bit nervous to be buying a secondhand phone from Amazon, but I couldn’t be happier with my purchase!! I have a pre-paid data plan so I was worried that this phone wouldn’t connect with my data plan, since the new phones don’t have the physical Sim tray anymore, but couldn’t have been easier! I bought an Unlocked black iPhone 14 Pro Max in excellent condition and everything is PERFECT. It was super easy to set up and the phone works and looks great. It truly was in excellent condition. Highly recommend!!!🖤</p>

@@ -2,12 +2,11 @@
 import React from "react"
 import styles from './Post.module.scss'
 import Paths from "~/components/Paths"
-import Image from "next/image";
 import { Comments, Details, Info, Logos, Reviews, } from "./utils";
 import { Button } from "~/components/ui/button";
 import { IoIosArrowDown } from "react-icons/io";
 import { Input } from "~/components/ui/input";
-import Cart from "~/components/Cart";
+import { useGetOneQuery } from "~/gql/_generated";
 
 interface IPageProps { id: string }
 
@@ -19,16 +18,28 @@ export default function Page({ id }: IPageProps) {
     const [color, setColor] = React.useState(0)
     const [more, setMore] = React.useState(false)
     const [comment, setComment] = React.useState(false)
-
+    const { data, loading } = useGetOneQuery({
+        variables: { id }
+    })
+    if (!data && loading) return
     return (
         <div className={styles.root}>
             <div className={styles.container}>
                 <div className="hidden lg:block">
-                    <Paths brand="Apple" name="Iphone 14" />
+                    <Paths brand={data?.getOne.brand.toLowerCase()} name={data?.getOne.title} />
                 </div>
                 <div className={styles.main}>
-                    <Logos index={index} setIndex={setIndex} styles={styles} />
+                    <Logos logos={data?.getOne.logos!} index={index} setIndex={setIndex} styles={styles} />
                     <Info
+                        Battery={data?.getOne.Battery!}
+                        FrontCamera={data?.getOne.FrontCamera!}
+                        MainCamera={data?.getOne.MainCamera!}
+                        cpu={data?.getOne.CPU!}
+                        screenSize={data?.getOne.screenSize!}
+                        memorys={data?.getOne.memory!}
+                        colors={data?.getOne.colors!}
+                        prices={data?.getOne.prices!}
+                        title={data?.getOne.title!}
                         styles={styles}
                         memory={memory}
                         color={color}
@@ -37,7 +48,12 @@ export default function Page({ id }: IPageProps) {
                         setMemory={setMemory}
                         setColor={setColor} />
                 </div>
-                <Details styles={styles} />
+                <Details
+                    screenSize={data?.getOne.screenSize!}
+                    description={data?.getOne.description!}
+                    screenResolution={data?.getOne.screenResolution!}
+                    screenType={data?.getOne.screenType!}
+                    styles={styles} />
                 <Button
                     variant={'outline'}
                     size={'lg'}
@@ -46,7 +62,12 @@ export default function Page({ id }: IPageProps) {
                     <p>View More</p>
                     <IoIosArrowDown />
                 </Button>
-                {more && <Details styles={styles} />}
+                {more && <Details
+                    styles={styles}
+                    screenSize={data?.getOne.screenSize!}
+                    description={data?.getOne.description!}
+                    screenResolution={data?.getOne.screenResolution!}
+                    screenType={data?.getOne.screenType!} />}
                 <Reviews input={input} styles={styles} />
                 <Input placeholder="Leave Comment" className="h-[64px]" />
                 <Comments styles={styles} />
@@ -69,11 +90,6 @@ export default function Page({ id }: IPageProps) {
                 <div className={styles.related}>
                     <h3 className={styles.h3}>Related Products</h3>
                     <div className={styles.cards}>
-                        <Cart />
-                        <Cart />
-                        <Cart />
-                        <Cart />
-                        <Cart />
                     </div>
                 </div>
             </div>

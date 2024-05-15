@@ -22,7 +22,6 @@ interface IBuyProps {
     dataCity: ICity[]
 }
 export default function Buy({ dataCity, dataCountry }: IBuyProps) {
-    const url = document.URL
     const [clearData, setClearData] = React.useState<{ country: string, city: string }[]>([])
     const [country, setCountry] = React.useState('')
     const [data, setData] = React.useState({
@@ -38,13 +37,14 @@ export default function Buy({ dataCity, dataCountry }: IBuyProps) {
     return (
         <div className={styles.root}>
             <div className={styles.container}>
-                <Road styles={styles} url={url} />
+                <Road styles={styles} url={''} />
                 <h2>Select Address</h2>
                 <RadioGroup defaultValue="0">
                     {(data.city && data.country !== '') && (
                         <>
                             {clearData.map((el, i) => (
                                 <Adress
+                                    key={i}
                                     setClearData={setClearData}
                                     clearData={clearData}
                                     city={city}

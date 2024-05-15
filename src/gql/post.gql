@@ -1,0 +1,27 @@
+query getAll {
+  getAll {
+    id
+    title
+    prices
+    logos
+  }
+}
+query getOne($id: String!) {
+  getOne(id: $id) {
+    Battery
+    CPU
+    FrontCamera
+    MainCamera
+    brand
+    colors
+    description
+    title
+    logos
+    screenType
+    memory
+    pixelDebcity
+    prices
+    screenResolution
+    screenSize
+  }
+}

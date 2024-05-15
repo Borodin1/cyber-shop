@@ -18,8 +18,8 @@ export default function Filters({ }: IFiltersProps) {
         <div className={styles.root}>
             <Accordion type="single" collapsible>
                 {data.map((el, i) => (
-                    <AccordionItem value={el.value}>
-                        <div key={i}>
+                    <AccordionItem value={el.value} key={i}>
+                        <div>
                             <AccordionTrigger className={styles.AccordionTrigger}>{el.value}</AccordionTrigger>
                             <AccordionContent className={styles.AccordionContent}>
                                 {i !== 0 && (<InputCustom input={input} setInput={setInput} styles={styles} />)}

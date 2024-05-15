@@ -23,7 +23,7 @@ export default function Tehnology({ }: ITehnologyProps) {
                     <Image src={'/Bads.png'} alt="Bads" width={104} height={272} />
                     <div className={styles.info}>
                         <h1>Apple <br /> AirPods <br /> <span>Max</span></h1>
-                        <p>Computational <br /> audio. <br /> Listen,<br />  it's powerful</p>
+                        <p>Computational <br /> audio. <br /> Listen,<br />  it&apos;s powerful</p>
                     </div>
                 </div>
                 <div className={styles.colThree} >

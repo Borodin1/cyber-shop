@@ -15,11 +15,11 @@ interface IPAgeThreeProps {
 
 }
 export default function PAgeThree({ }: IPAgeThreeProps) {
-    const url = document.URL
+
     return (
         <div className={styles.root}>
             <div className={styles.container}>
-                <Road styles={styles} url={url} />
+                <Road styles={styles} url={''} />
                 <div className={styles.main}>
                     <Card className="w-full flex flex-col gap-6">
                         <CardHeader>

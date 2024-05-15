@@ -2,14 +2,24 @@
 import Image from "next/image"
 import React from "react"
 import styles from './Cart.module.scss'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "~/components/ui/card"
+import { Card, CardContent, } from "~/components/ui/card"
 import { Button } from "~/components/ui/button"
 import { CiHeart } from "react-icons/ci";
+import Link from "next/link"
+import { PAGES_DASHBOARD } from "~/configs/pages"
 
 
-interface ICartProps { }
-export default function Cart({ }: ICartProps) {
+interface ICartProps {
+    id?: string;
+    title?: string;
+    prices?: number[];
+    logos?: string[];
+
+}
+
+export default function Cart({ ...data }: Partial<ICartProps>) {
     const [hover, setHover] = React.useState(false)
+    
     return (
         <Card
             onMouseEnter={() => setHover(!hover)}
@@ -17,9 +27,9 @@ export default function Cart({ }: ICartProps) {
             className={styles.Cart}>
             {hover && <CiHeart className={styles.heart} />}
             <CardContent className={styles.CardContent}>
-                <Image src={'/cart/Iphone14.png'} alt="iphohe" width={160} height={160} />
-                <h3>Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)</h3>
-                <p>$900</p>
+                <Image src={data?.logos ? data?.logos[0] : ''} alt="iphone" width={160} height={160} />
+                <Link href={`${PAGES_DASHBOARD.CATALOG}/smartphones/${data.id}`}>{data.title}</Link>
+                <p>{data.prices ? data.prices[0] : ''}</p>
                 <Button variant={'default'} size={'lg'}>Buy now</Button>
             </CardContent>
         </Card>

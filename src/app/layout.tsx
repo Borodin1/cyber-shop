@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Footer from "~/components/Footer";
+import ApolloClientProvider from "~/providers/Apollo-provider";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,10 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} flex flex-col min-h-screen`}>
-        <Header />
-        {children}
-        <Footer />
-        <Toaster />
+        <ApolloClientProvider>
+          <Header />
+          {children}
+          <Footer />
+          <Toaster />
+        </ApolloClientProvider>
       </body>
     </html>
   );

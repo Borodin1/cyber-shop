@@ -5,8 +5,6 @@ interface IPostProps {
     params: { id: string }
 }
 export default function Post({ params: { id } }: IPostProps) {
-    console.log(id);
-
     return <Page id={id} />
 
 }

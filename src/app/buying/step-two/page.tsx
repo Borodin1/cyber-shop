@@ -10,11 +10,10 @@ interface IStepTwoProps {
 
 }
 export default function StepTwo({ }: IStepTwoProps) {
-    const url = document.URL
     return (
         <div className={styles.root}>
             <div className={styles.container}>
-                <Road styles={styles} url={url} />
+                <Road styles={styles} url={''} />
                 <div className={styles.snipnet}>
                     <h2>Shipment Method</h2>
                     <RadioGroup className={styles.method} defaultValue="one">
